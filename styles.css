@@ -1,0 +1,18 @@
+.play-overlay {
+    z-index: 99999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 12px 24px;
+    padding-bottom: 0px;
+    background: rgba(0, 123, 255) url(./assets/white-play-256.png) center no-repeat;
+    background-size: 40px 40px;
+  }
+.play-overlay:hover {
+  background: rgba(0, 0, 0, 0.2) url(./assets/white-play-256.png) center no-repeat;
+  background-size: 40px 40px;
+}

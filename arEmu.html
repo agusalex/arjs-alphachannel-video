@@ -1,0 +1,48 @@
+<html>
+  <head>
+     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <!-- <script src="aframe-ar.js"></script> use this (v1.6) if this demo ever breaks-->
+  </head>
+  <body>
+    <a id="playButton" onclick="play('alpha')"><div class="btn btn-primary play-overlay menu-overlay"></div></a>
+    <a-scene arjs='sourceType:image;sourceUrl: assets/kanji-marker.png'>
+    <a-assets>
+        <video id="alpha" autoplay loop="true" src="assets/AlphaTestVideo.webm"></video>
+    </a-assets>
+
+    <!-- Using the asset management system. -->
+   
+    <a-marker-camera preset='hiro'>
+           <a-video id = "vid"  rotation =  "-62.584 -3.936 4.509"  scale="5 5 1" src="#alpha">
+      <video scale= "20 20 1" src="#source"></video></a-video>
+    </a-marker-camera>
+    </a-scene>
+  </body>
+  
+  <script>
+    
+    function play(id){
+      var aVideoAsset = document.querySelector('#' + id);
+      aVideoAsset.play().catch(function (error) {
+        aVideoAsset.pause();
+        drawText("Presione el boton de play");
+        hideOrShow("playButton");
+
+      });
+      aVideoAsset.setAttribute('loop', 'false');
+      hideOrShow('playButton');
+    }
+    function hideOrShow(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+ 
+  </script>
+</html> 
+
