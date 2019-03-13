@@ -27,7 +27,6 @@
       var aVideoAsset = document.querySelector('#' + id);
       aVideoAsset.play().catch(function (error) {
         aVideoAsset.pause();
-        drawText("Presione el boton de play");
         hideOrShow("playButton");
 
       });
